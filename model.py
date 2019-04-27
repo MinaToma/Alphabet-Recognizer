@@ -19,6 +19,7 @@ from keras.regularizers import l2
 import data
 
 
+
 class model:
     def __init__(self):
         # self.trainI, self.trianL, self.testI, self.testL = data.load_data()
