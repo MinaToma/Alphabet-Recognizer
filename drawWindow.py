@@ -16,7 +16,7 @@ class drawWindow:
         lastx, lasty = None, None
         self.cv = Canvas(self.drawWindow, width=700, height=700, bg='white')
         # --- PIL
-        self.image1 = PIL.Image.new('RGB', (560, 560), "black")
+        self.image1 = PIL.Image.new('RGB', (700, 700), "black")
         self.draw = ImageDraw.Draw(self.image1)
 
         self.cv.bind('<1>', self.activate_paint)
