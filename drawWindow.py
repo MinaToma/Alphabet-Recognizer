@@ -16,7 +16,7 @@ class drawWindow:
         lastx, lasty = None, None
         self.cv = Canvas(self.drawWindow, width=700, height=700, bg='white')
         # --- PIL
-        self.image1 = PIL.Image.new('RGB', (560, 560), 'white')
+        self.image1 = PIL.Image.new('RGB', (560, 560), "black")
         self.draw = ImageDraw.Draw(self.image1)
 
         self.cv.bind('<1>', self.activate_paint)
@@ -28,7 +28,7 @@ class drawWindow:
 
     def process_img(self, img):
         img = img.resize((28, 28), Image.ANTIALIAS)
-        img.save("h.png")
+        img.save("newImg.png")
         img = np.array(img)
         img = img[:, :, 0]
         print(img.shape)
@@ -54,7 +54,7 @@ class drawWindow:
     def paint(self, e):
         global lastx, lasty
         x, y = e.x, e.y
-        self.cv.create_line((lastx, lasty, x, y), width=8)
+        self.cv.create_line((lastx, lasty, x, y), width=50)
         #  --- PIL
-        self.draw.line((lastx, lasty, x, y), fill='black', width=8)
+        self.draw.line((lastx, lasty, x, y), fill='white', width=50)
         lastx, lasty = x, y
