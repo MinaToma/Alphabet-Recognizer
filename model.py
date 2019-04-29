@@ -21,7 +21,7 @@ import data
 
 class model:
     def __init__(self):
-        self.trainI, self.trianL, self.testI, self.testL = data.load_data()
+        #self.trainI, self.trianL, self.testI, self.testL = data.load_data()
         self.my_model = self.moodel()
         # self.my_model.load_weights("weights.h5")
         self.my_model.load_weights("89.1.h5")
