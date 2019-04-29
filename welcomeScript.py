@@ -36,26 +36,31 @@ def openMainWindow():
 
 welcomeWindow.geometry("500x500")
 
-welcome = Label(welcomeWindow, text="Welcome To Character Recognition", fg="blue")
-welcome.pack(side=TOP, fill=X)
+labelFont = font.Font(family='Helvetica', size=30, weight='bold', slant='italic')
+welcome = Label(welcomeWindow, text="Welcome To\nCharacter Recognition", font=labelFont, fg="#7da1c1").place(x=40, y=110)
 
-mainWindowButton = Button(welcomeWindow, text="Start", command=openMainWindow)
-mainWindowButton.pack()
+mainWindowButton = Button(welcomeWindow, text="Start", command=openMainWindow, width=35, height=2, bg="#232323",
+                          fg="white").place(x=95, y=355)
 
 # /---------------------------------------------------------------------------------------------------------------------/
 
+buttonFont = font.Font(family='Helvetica', size=40, weight='bold', slant='italic')
+
 mainWindow.geometry("500x500")
-predictButton = Button(mainWindow, text="Predict", command=predict)
-predictButton.pack()
+predictButton = Button(mainWindow, text="Predict", command=predict, bg="#7da1c1", fg="black", font=buttonFont)
+predictButton.place(bordermode=OUTSIDE, height=225, width=250, x=0, y=0)
 
-showLoss = Button(mainWindow, text="Loss", command=show_loss)
-showLoss.pack()
+testButton = Button(mainWindow, text="Test", command=show_loss, bg="#eaea60", fg="black", font=buttonFont)
+testButton.place(bordermode=OUTSIDE, height=225, width=250, x=250, y=0)
 
-showAccuracy = Button(mainWindow, text="Accuracy", command=show_accuracy)
-showAccuracy.pack()
+showLoss = Button(mainWindow, text="Loss", command=show_loss, bg="#ff5b5b", fg="black", font=buttonFont)
+showLoss.place(bordermode=OUTSIDE, height=225, width=250, x=0, y=225)
 
-backButton = Button(mainWindow, text="back", command=back_main)
-backButton.pack()
+showAccuracy = Button(mainWindow, text="Accuracy", command=show_accuracy, bg="#b5ff5b", fg="black", font=buttonFont)
+showAccuracy.place(bordermode=OUTSIDE, height=225, width=250, x=250, y=225)
+
+backButton = Button(mainWindow, text="BACK", command=back_main, bg="#232323", fg="white", font=buttonFont)
+backButton.place(bordermode=OUTSIDE, height=50, width=500, x=0, y=450)
 
 # /---------------------------------------------------------------------------------------------------------------------/
 
