@@ -6,17 +6,19 @@ from PIL import ImageDraw, Image
 import numpy as np
 
 model = model.model()
-model.my_model.load_weights("83.3.h5")
+# model.my_model.load_weights("88.6.h5")
+model.my_model.load_weights("89.1.h5")
 # model.train(4112, 1, 5e-4)
+
 
 class drawWindow:
     def __init__(self):
         self.drawWindow = Tk()
         global lastx, lasty
         lastx, lasty = None, None
-        self.cv = Canvas(self.drawWindow, width=700, height=700, bg='white')
+        self.cv = Canvas(self.drawWindow, width=300, height=300, bg='white')
         # --- PIL
-        self.image1 = PIL.Image.new('RGB', (700, 700), "black")
+        self.image1 = PIL.Image.new('RGB', (300, 300), "black")
         self.draw = ImageDraw.Draw(self.image1)
 
         self.cv.bind('<1>', self.activate_paint)
@@ -54,7 +56,7 @@ class drawWindow:
     def paint(self, e):
         global lastx, lasty
         x, y = e.x, e.y
-        self.cv.create_line((lastx, lasty, x, y), width=50)
+        self.cv.create_line((lastx, lasty, x, y), width=20)
         #  --- PIL
-        self.draw.line((lastx, lasty, x, y), fill='white', width=50)
+        self.draw.line((lastx, lasty, x, y), fill='white', width=20)
         lastx, lasty = x, y

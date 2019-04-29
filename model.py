@@ -19,11 +19,12 @@ from keras.regularizers import l2
 import data
 
 
-
 class model:
     def __init__(self):
-        # self.trainI, self.trianL, self.testI, self.testL = data.load_data()
+        self.trainI, self.trianL, self.testI, self.testL = data.load_data()
         self.my_model = self.moodel()
+        # self.my_model.load_weights("weights.h5")
+        self.my_model.load_weights("89.1.h5")
 
     def moodel(self):
         reg = 0
@@ -46,8 +47,13 @@ class model:
 
         model.add(Dense(8))
         model.add(Activation('relu'))
-        model.add(Dense(4))
+        #
+        # model.add(Dense(8))
+        # model.add(Activation('relu'))
+
+        model.add(Dense(16))
         model.add(Activation('relu'))
+
         model.add(Dense(27, activation='softmax'))
 
         return model
@@ -61,12 +67,10 @@ class model:
         self.my_model.compile(loss='sparse_categorical_crossentropy', optimizer=self.adam, metrics=['accuracy'])
 
         history = self.my_model.fit(self.trainI, self.trianL, batch_size=batch_size, epochs=epochs, shuffle=True,
-                                    validation_split=0.2)
+                                    validation_split=0.1)
 
         self.plot_history(history)
-
         self.my_model.save_weights('weights.h5')
-
         model_yaml = self.my_model.to_yaml()
         with open("model.yaml", "w") as yaml_file:
             yaml_file.write(model_yaml)
@@ -96,6 +100,7 @@ class model:
         plt.ylabel('accuracy')
         plt.xlabel('epoch')
         plt.legend(['train', 'test'], loc='upper left')
+        plt.savefig("acc.png")
         plt.show()
         # summarize history for loss
         plt.plot(history.history['loss'])
@@ -104,4 +109,12 @@ class model:
         plt.ylabel('loss')
         plt.xlabel('epoch')
         plt.legend(['train', 'test'], loc='upper left')
+        plt.savefig("loss.png")
         plt.show()
+
+
+# model = model()
+
+# model.train(4, 20, 1e-5)
+# print (model.testI.shape)
+# model.evaluate()
