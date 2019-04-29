@@ -7,7 +7,7 @@ import numpy as np
 
 model = model.model()
 # model.my_model.load_weights("88.6.h5")
-model.my_model.load_weights("89.1.h5")
+# model.my_model.load_weights("89.1.h5")
 # model.train(4112, 1, 5e-4)
 
 
@@ -56,7 +56,7 @@ class drawWindow:
     def paint(self, e):
         global lastx, lasty
         x, y = e.x, e.y
-        self.cv.create_line((lastx, lasty, x, y), width=20)
+        self.cv.create_line((lastx, lasty, x, y), width=35)
         #  --- PIL
-        self.draw.line((lastx, lasty, x, y), fill='white', width=20)
+        self.draw.line((lastx, lasty, x, y), fill='white', width=35)
         lastx, lasty = x, y

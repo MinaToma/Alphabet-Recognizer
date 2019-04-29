@@ -2,7 +2,7 @@
 # config = tf.ConfigProto()
 # config.gpu_options.per_process_gpu_memory_fraction = 0.30
 # session = tf.Session(config=config)
-from keras.models import model_from_yaml
+# ofrom keras.models import model_from_yaml
 import matplotlib.pyplot as plt
 
 from keras.models import Sequential
@@ -21,10 +21,11 @@ import data
 
 class model:
     def __init__(self):
-        #self.trainI, self.trianL, self.testI, self.testL = data.load_data()
+        self.trainI, self.trianL, self.testI, self.testL = data.load_data()
         self.my_model = self.moodel()
         # self.my_model.load_weights("weights.h5")
         self.my_model.load_weights("89.1.h5")
+        # model.my_model.load_weights("89.1.h5")
 
     def moodel(self):
         reg = 0
