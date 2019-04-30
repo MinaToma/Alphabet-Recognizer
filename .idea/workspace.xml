@@ -91,7 +91,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Alphabet-Recognizer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Alphabet-Recognizer" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -158,8 +168,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.model" />
       <item itemvalue="Python.welcomeScript" />
+      <item itemvalue="Python.model" />
     </list>
     <recent_temporary>
       <list>
