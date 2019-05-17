@@ -1,2 +1,2 @@
-# Alaphabet-Recognizer
+# Alphabet-Recognizer
 A hand written English alphabet recognizer using convolutional Neural Networks
